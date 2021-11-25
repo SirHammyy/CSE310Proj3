@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cse310proj3.dir/defns.cpp.obj"
   "CMakeFiles/cse310proj3.dir/main.cpp.obj"
   "cse310proj3.exe"
   "cse310proj3.exe.manifest"

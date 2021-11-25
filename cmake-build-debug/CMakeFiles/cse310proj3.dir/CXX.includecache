@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-F:/Programming/git-repos/School/CSE310/cse310proj3/main.cpp
+F:/Programming/git-repos/School/CSE310/cse310proj3/defns.cpp
 iostream
 -
+defns.h
+F:/Programming/git-repos/School/CSE310/cse310proj3/defns.h
+
+F:/Programming/git-repos/School/CSE310/cse310proj3/defns.h
 

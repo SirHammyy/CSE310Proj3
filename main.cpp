@@ -1,85 +1,63 @@
 #include <iostream>
+#include "defns.h"
 
+#define INF 99999
 using namespace std;
 
-struct edge {
-    int src, dst;
-    edge* next;
-};
 
 int main() {
     string input;
     getline(cin, input);
     int numNodes = stoi(input.substr(0, input.find(' ')));
     int numEdges = stoi(input.substr(input.find(' '), input.length()));
-    edge* graph[numNodes];
+    edge *graph[numNodes + 1];
     for (int i = 0; i < numNodes; i++)
         graph[i] = nullptr;
     graph[0] = new edge();
     graph[0]->src = numNodes;
     graph[0]->dst = numEdges;
-    while(getline(cin, input)) {
+    while (getline(cin, input)) {
         int src = stoi(input.substr(0, input.find(' ')));
         int dst = stoi(input.substr(input.find(' '), input.length()));
-        edge* temp = new edge();
+        edge *temp = new edge();
         temp->src = src;
         temp->dst = dst;
         temp->next = nullptr;
 
         if (graph[src] == nullptr) {
             graph[src] = temp;
-        }
-        else {
+        } else {
             temp->next = graph[src];
             graph[src] = temp;
         }
-    }
 
-    for (int i = 0; i < numNodes; i++) {
-        edge* temp = graph[i];
-        while (temp != nullptr) {
-            temp = temp->next;
+        temp = new edge();
+        temp->src = dst;
+        temp->dst = src;
+        temp->next = nullptr;
+        if (graph[dst] == nullptr) {
+            graph[dst] = temp;
+        } else {
+            temp->next = graph[dst];
+            graph[dst] = temp;
         }
     }
+
+    edge *last = graph[numNodes];
+    while (last->next != nullptr && last->next->src < 10000 && last->next->dst < 10000) {
+        last = last->next;
+    }
+    last->next = nullptr;
 
     //Find odd-degree vertices
-    int oddVerticesCount = 0;
-    for (int i = 1; i <= numNodes; i++) {
-        int currentNumEdges = 0;
-        for (int j = 1; j < numNodes; j++) {
-            edge *temp = graph[j];
-            while (temp != nullptr) {
-                if (temp->src == i || temp->dst == i)
-                    currentNumEdges++;
-                temp = temp->next;
-            }
-        }
+    int oddCount;
+    int *oddVertices = findOddVertices(graph, numNodes, oddCount);
+    printOddVertices(oddVertices, oddCount);
 
-        if (currentNumEdges % 2 != 0) {
-            oddVerticesCount++;
-        }
-    }
+    //Floyd Warshall Algorithm
+    int** dist = FloydWarshall(graph, numNodes);
+    printOddFloydWarshall(dist, numNodes, oddVertices, oddCount);
 
-    int oddVertices[oddVerticesCount], counter = 0;
-    for (int i = 1; i <= numNodes; i++) {
-        int currentNumEdges = 0;
-        for (int j = 1; j < numNodes; j++) {
-            edge *temp = graph[j];
-            while (temp != nullptr) {
-                if (temp->src == i || temp->dst == i)
-                    currentNumEdges++;
-                temp = temp->next;
-            }
-        }
-
-        if (currentNumEdges % 2 != 0) {
-            oddVertices[counter] = i;
-            counter++;
-        }
-    }
-
-    cout << "The odd-degree vertices in G: O = { ";
-     for (int i = 0; i < counter; i++)
-        cout << oddVertices[i] << " ";
-    cout << "}" << endl;
+    //Greedy Algorithm
+    
 }

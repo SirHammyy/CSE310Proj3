@@ -128,6 +128,30 @@ cse310proj3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/build
 .PHONY : cse310proj3/fast
 
+defns.obj: defns.cpp.obj
+.PHONY : defns.obj
+
+# target to build an object file
+defns.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/defns.cpp.obj
+.PHONY : defns.cpp.obj
+
+defns.i: defns.cpp.i
+.PHONY : defns.i
+
+# target to preprocess a source file
+defns.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/defns.cpp.i
+.PHONY : defns.cpp.i
+
+defns.s: defns.cpp.s
+.PHONY : defns.s
+
+# target to generate assembly for a file
+defns.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/defns.cpp.s
+.PHONY : defns.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -161,6 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... cse310proj3
+	@echo ... defns.obj
+	@echo ... defns.i
+	@echo ... defns.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
