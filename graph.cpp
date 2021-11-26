@@ -1,8 +1,19 @@
 #include <iostream>
-#include "defns.h"
+#include "graph.h"
 
 #define INF 99999
 using namespace std;
+
+void printAdjacencyList(edge** graph, int numNodes) {
+    for (int i = 1; i <= numNodes; i++) {
+        edge* ptemp = graph[i];
+        while (ptemp != nullptr) {
+            cout << ptemp->src << " " << ptemp->dst << " " << ptemp->weight << " -> ";
+            ptemp = ptemp->next;
+        }
+        cout << endl;
+    }
+}
 
 int* findOddVertices(edge **graph, int numNodes, int &oddCount) {
     int oddVerticesCount = 0;
@@ -149,5 +160,71 @@ void printOddFloydWarshall(int **dist, int numNodes, const int *oddVertices, int
                 cout << endl;
             }
         }
+    }
+    cout << endl;
+}
+
+edge* sortEdgeArray(edge* o, int length) {
+    int j;
+    for (int i = 1; i < length; i++) {
+        j = i;
+        while (j >= 0 && o[j - 1].weight > o[j].weight) {
+            swap(o[j - 1], o[j]);
+            j = j - 1;
+        }
+    }
+
+    return o;
+}
+
+edge* findMatching(edge* o, int length, int &lengthOfPath) {
+    lengthOfPath = 0;
+    bool flag = false;
+    edge* m = new edge[length];
+    m[0] = o[0];
+    lengthOfPath++;
+
+    for (int i = 1; i < length; i++) {
+        for (int j = 0; j < lengthOfPath; j++) {
+            if (o[i].src == m[j].src || o[i].src == m[j].dst ||
+                o[i].dst == m[j].src || o[i].dst == m[j].dst) {
+                    flag = true;
+            }
+        }
+
+        if (!flag) {
+            m[lengthOfPath] = o[i];
+            lengthOfPath++;
+        }
+
+        flag = false;
+    }
+
+    return m;
+}
+
+void printMatching(edge* m, int length) {
+    cout << "The greedy perfect matching in O: M = { ";
+    for (int i = 0; i < length; i++) {
+        cout << "(" << m[i].src << "," << m[i].dst << ") ";
+    }
+    cout << "}" << endl << endl;
+}
+
+void insertVirtualEdges(edge* m, edge** graph, int lengthOfPath, int numNodes) {
+    for (int i = 0; i < lengthOfPath; i++) {
+        edge* temp = new edge();
+        *temp = m[i];
+        temp->virt = true;
+        temp->next = graph[m[i].src];
+        graph[m[i].src] = temp;
+
+        temp = new edge();
+        *temp = m[i];
+        temp->virt = true;
+        temp->src = m[i].dst;
+        temp->dst = m[i].src;
+        temp->next = graph[m[i].dst];
+        graph[m[i].dst] = temp;
     }
 }

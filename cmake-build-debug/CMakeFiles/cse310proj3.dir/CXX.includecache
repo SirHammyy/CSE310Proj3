@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
-F:/Programming/git-repos/School/CSE310/cse310proj3/defns.cpp
+F:/Programming/git-repos/School/CSE310/cse310proj3/graph.cpp
 iostream
 -
-defns.h
-F:/Programming/git-repos/School/CSE310/cse310proj3/defns.h
+graph.h
+F:/Programming/git-repos/School/CSE310/cse310proj3/graph.h
 
-F:/Programming/git-repos/School/CSE310/cse310proj3/defns.h
+F:/Programming/git-repos/School/CSE310/cse310proj3/graph.h
+
+F:/Programming/git-repos/School/CSE310/cse310proj3/main.cpp
+iostream
+-
+graph.h
+F:/Programming/git-repos/School/CSE310/cse310proj3/graph.h
 

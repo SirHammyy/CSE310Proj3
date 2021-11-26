@@ -80,10 +80,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="F:/Programming/git-repos/School/CSE310/cse310proj3/defns.cpp">
+		<Unit filename="F:/Programming/git-repos/School/CSE310/cse310proj3/graph.cpp">
 			<Option target="cse310proj3"/>
 		</Unit>
-		<Unit filename="F:/Programming/git-repos/School/CSE310/cse310proj3/defns.h">
+		<Unit filename="F:/Programming/git-repos/School/CSE310/cse310proj3/graph.h">
 			<Option target="cse310proj3"/>
 		</Unit>
 		<Unit filename="F:/Programming/git-repos/School/CSE310/cse310proj3/main.cpp">

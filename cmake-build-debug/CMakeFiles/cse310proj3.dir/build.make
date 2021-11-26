@@ -78,29 +78,29 @@ CMakeFiles/cse310proj3.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cse310proj3.dir/main.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Programming\git-repos\School\CSE310\cse310proj3\main.cpp -o CMakeFiles\cse310proj3.dir\main.cpp.s
 
-CMakeFiles/cse310proj3.dir/defns.cpp.obj: CMakeFiles/cse310proj3.dir/flags.make
-CMakeFiles/cse310proj3.dir/defns.cpp.obj: ../defns.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Programming\git-repos\School\CSE310\cse310proj3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cse310proj3.dir/defns.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cse310proj3.dir\defns.cpp.obj -c F:\Programming\git-repos\School\CSE310\cse310proj3\defns.cpp
+CMakeFiles/cse310proj3.dir/graph.cpp.obj: CMakeFiles/cse310proj3.dir/flags.make
+CMakeFiles/cse310proj3.dir/graph.cpp.obj: ../graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Programming\git-repos\School\CSE310\cse310proj3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cse310proj3.dir/graph.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cse310proj3.dir\graph.cpp.obj -c F:\Programming\git-repos\School\CSE310\cse310proj3\graph.cpp
 
-CMakeFiles/cse310proj3.dir/defns.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cse310proj3.dir/defns.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Programming\git-repos\School\CSE310\cse310proj3\defns.cpp > CMakeFiles\cse310proj3.dir\defns.cpp.i
+CMakeFiles/cse310proj3.dir/graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cse310proj3.dir/graph.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Programming\git-repos\School\CSE310\cse310proj3\graph.cpp > CMakeFiles\cse310proj3.dir\graph.cpp.i
 
-CMakeFiles/cse310proj3.dir/defns.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cse310proj3.dir/defns.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Programming\git-repos\School\CSE310\cse310proj3\defns.cpp -o CMakeFiles\cse310proj3.dir\defns.cpp.s
+CMakeFiles/cse310proj3.dir/graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cse310proj3.dir/graph.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Programming\git-repos\School\CSE310\cse310proj3\graph.cpp -o CMakeFiles\cse310proj3.dir\graph.cpp.s
 
 # Object files for target cse310proj3
 cse310proj3_OBJECTS = \
 "CMakeFiles/cse310proj3.dir/main.cpp.obj" \
-"CMakeFiles/cse310proj3.dir/defns.cpp.obj"
+"CMakeFiles/cse310proj3.dir/graph.cpp.obj"
 
 # External object files for target cse310proj3
 cse310proj3_EXTERNAL_OBJECTS =
 
 cse310proj3.exe: CMakeFiles/cse310proj3.dir/main.cpp.obj
-cse310proj3.exe: CMakeFiles/cse310proj3.dir/defns.cpp.obj
+cse310proj3.exe: CMakeFiles/cse310proj3.dir/graph.cpp.obj
 cse310proj3.exe: CMakeFiles/cse310proj3.dir/build.make
 cse310proj3.exe: CMakeFiles/cse310proj3.dir/linklibs.rsp
 cse310proj3.exe: CMakeFiles/cse310proj3.dir/objects1.rsp

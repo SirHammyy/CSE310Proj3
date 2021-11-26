@@ -1,5 +1,5 @@
 #include <iostream>
-#include "defns.h"
+#include "graph.h"
 
 #define INF 99999
 using namespace std;
@@ -10,7 +10,7 @@ int main() {
     getline(cin, input);
     int numNodes = stoi(input.substr(0, input.find(' ')));
     int numEdges = stoi(input.substr(input.find(' '), input.length()));
-    edge *graph[numNodes + 1];
+    edge* graph[numNodes + 1];
     for (int i = 0; i < numNodes; i++)
         graph[i] = nullptr;
     graph[0] = new edge();
@@ -59,5 +59,38 @@ int main() {
     printOddFloydWarshall(dist, numNodes, oddVertices, oddCount);
 
     //Greedy Algorithm
-    
+    int oddEdgesCount = (oddCount*(oddCount-1))/2, temp = 0;
+    edge* o;
+    o = new edge[oddEdgesCount];
+
+    for (int i = 1; i < oddEdgesCount; i++) {
+        for (int k = 0; k < oddCount; k++) {
+            if (oddVertices[k] == i) {
+                for (int j = 0; j < oddCount; j++) {
+                    if (oddVertices[j] > i) {
+                        o[temp].src = i;
+                        o[temp].dst = oddVertices[j];
+                        o[temp].weight = dist[i][oddVertices[j]];
+                        temp++;
+                    }
+                }
+            }
+        }
+    }
+    o = sortEdgeArray(o, oddEdgesCount);
+    int lengthOfPath = 0;
+    edge* matching = findMatching(o, oddEdgesCount, lengthOfPath);
+
+    printMatching(matching, lengthOfPath);
+
+    //Insert virtual edges
+    insertVirtualEdges(matching, graph, lengthOfPath, numNodes);
+
+
+
+    printAdjacencyList(graph, numNodes);
+
+    //Memory cleanup
+    delete matching;
+    delete o;
 }

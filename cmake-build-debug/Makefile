@@ -128,29 +128,29 @@ cse310proj3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/build
 .PHONY : cse310proj3/fast
 
-defns.obj: defns.cpp.obj
-.PHONY : defns.obj
+graph.obj: graph.cpp.obj
+.PHONY : graph.obj
 
 # target to build an object file
-defns.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/defns.cpp.obj
-.PHONY : defns.cpp.obj
+graph.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/graph.cpp.obj
+.PHONY : graph.cpp.obj
 
-defns.i: defns.cpp.i
-.PHONY : defns.i
+graph.i: graph.cpp.i
+.PHONY : graph.i
 
 # target to preprocess a source file
-defns.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/defns.cpp.i
-.PHONY : defns.cpp.i
+graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/graph.cpp.i
+.PHONY : graph.cpp.i
 
-defns.s: defns.cpp.s
-.PHONY : defns.s
+graph.s: graph.cpp.s
+.PHONY : graph.s
 
 # target to generate assembly for a file
-defns.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/defns.cpp.s
-.PHONY : defns.cpp.s
+graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cse310proj3.dir\build.make CMakeFiles/cse310proj3.dir/graph.cpp.s
+.PHONY : graph.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -185,9 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... cse310proj3
-	@echo ... defns.obj
-	@echo ... defns.i
-	@echo ... defns.s
+	@echo ... graph.obj
+	@echo ... graph.i
+	@echo ... graph.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
