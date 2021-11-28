@@ -8,8 +8,14 @@ using namespace std;
 int main() {
     string input;
     getline(cin, input);
-    int numNodes = stoi(input.substr(0, input.find(' ')));
-    int numEdges = stoi(input.substr(input.find(' '), input.length()));
+    int numNodes;
+    int numEdges;
+    try {
+        numNodes = stoi(input.substr(0, input.find(' ')));
+        numEdges = stoi(input.substr(input.find(' '), input.length()));
+    } catch (invalid_argument) {
+        cout << "Invalid Argument" << endl;
+    }
     edge* graph[numNodes + 1];
     for (int i = 0; i < numNodes; i++)
         graph[i] = nullptr;
@@ -44,10 +50,11 @@ int main() {
     }
 
     edge *last = graph[numNodes];
-    while (last->next != nullptr && last->next->src < 10000 && last->next->dst < 10000) {
+    while (last->next != nullptr && last->next->src < 10000 && last->next->dst < 100000 && last->next->src > 0 && last->next->dst > 0) {
         last = last->next;
     }
-    last->next = nullptr;
+    last->next = NULL;
+    printAdjacencyList(graph, numNodes);
 
     //Find odd-degree vertices
     int oddCount;

@@ -4,7 +4,7 @@
 struct edge {
     int src, dst, weight = 1;
     bool virt = false;
-    edge* next;
+    edge* next = nullptr;
 };
 
 void printAdjacencyList(edge** graph, int numNodes);
