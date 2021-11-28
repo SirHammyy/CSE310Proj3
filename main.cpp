@@ -54,7 +54,6 @@ int main() {
         last = last->next;
     }
     last->next = NULL;
-    printAdjacencyList(graph, numNodes);
 
     //Find odd-degree vertices
     int oddCount;

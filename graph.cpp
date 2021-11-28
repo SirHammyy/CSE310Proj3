@@ -8,7 +8,7 @@ void printAdjacencyList(edge** graph, int numNodes) {
     for (int i = 1; i <= numNodes; i++) {
         edge* ptemp = graph[i];
         while (ptemp != nullptr) {
-            cout << ptemp->src << " " << ptemp->dst << " " << ptemp->weight << " -> ";
+            cout << "Src: " << ptemp->src << " Dst: " << ptemp->dst << " Weight: " << ptemp->weight << " -> ";
             ptemp = ptemp->next;
         }
         cout << endl;
